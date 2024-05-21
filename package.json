@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "End-to-End Testing with Cypress",
   "scripts": {
-    "start": "serve todos"
+    "start": "serve -p 3001 todos",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --config video=true",
+    "test": "start-server-and-test start http://localhost:3001 cy:run"
   },
   "author": "Hess <hessro@oregonstate.edu>",
   "license": "MIT",
   "dependencies": {
     "serve": "^14.2.3"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
+    "cypress": "^13.9.0",
+    "start-server-and-test": "^2.0.3"
   }
 }
